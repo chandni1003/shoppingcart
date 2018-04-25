@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shopping Cart</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+ 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+ 	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+ 	<link rel="stylesheet" type="text/css" href="scstyle.css">
+</head>
+<body>
+<div ng-app="myApp" ng-controller="mysc">
+	<div class="menu">
+	<ul>
+	<li><h1 ng-click="count=0; price=0" class="animated bounce">Délicieux Chocolaterie</h1></li>
+	<li><a href=""><img src="sc.jpg" class="img" align="right"></a></li>
+
+	<li><h4 align="right">{{ "Quantity: "+count  }}</h4></li>
+	<li><h4 align="right">{{ "Total Price: Rs. "+price }}</h4></li>
+	</ul>
+	</div>
+	<br>
+	<div class="items">
+		<div class="row">
+  			<div class="column" style="background-color:#3E0F45;">
+    			<h2>Toblerone Classic - Rs. 499<span ng-click="count=count+1; price=price+499">+</span><span ng-click="count=count-1; price=price-499">-</span></h2>
+    			<p><img src="item1.jpg" class="pic"></p>
+  			</div>
+  			<div class="column" style="background-color:#3E0F45;">
+   				<h2>Lindt Collection - Rs. 999<span ng-click="count=count+1; price=price+999">+</span><span ng-click="count=count-1; price=price-999">-</span></h2>
+    			<p><img src="item2.jpg" class="pic"></p>
+  			</div>
+ 			<div class="column" style="background-color:#3E0F45;">
+    			<h2>Hershey's Minis - Rs. 799<span ng-click="count=count+1; price=price+799">+</span><span ng-click="count=count-1; price=price-799">-</span></h2>
+    			<p><img src="item3.jpg" class="pic" align="center"></p>
+  			</div>
+		</div>			
+	</div>
+</div>
+<br><br>
+<footer>Created by - Chandni Raghuraman, E024</footer>
+<script>
+var app = angular.module('myApp', []);
+app.controller('mysc', function($scope) {
+    $scope.count = 0;
+    $scope.price = 0;
+});
+</script> 
+</body>
+</html>
